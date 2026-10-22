@@ -6,10 +6,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { registerSchema } from '../../Schema/register.schema';
 import axios from 'axios';
 import { baseUrl } from '../../constant/enviromant';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import type { RegisterFormInputs } from '../../types/Auth.types';
-import {Helmet} from "react-helmet";
+
 
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false)
@@ -23,7 +23,7 @@ export default function Register() {
       username: "",
       email: "",
       dateOfBirth: "",
-      gender: "",
+      gender: "" as unknown as "male" | "female",
       password: "",
       rePassword: ""
     }
@@ -48,9 +48,7 @@ export default function Register() {
 
   return (
     <>
-    <Helmet>
-        <title>Register</title>
-      </Helmet>
+
     <section className="order-1 w-full max-w-107.5 lg:order-2">
       <div className="rounded-2xl bg-white p-4 shadow-sm sm:p-6">
         <div className="mb-4 text-center lg:hidden">

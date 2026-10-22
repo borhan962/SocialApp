@@ -1,7 +1,5 @@
-
 import { useState } from 'react'
 import type { postItem } from '../../../types/post.type'
-import PostComment from '../postComment/PostComment'
 import AllComments from '../allComments/AllComments'
 import CreateComment from '../createComment/CreateComment'
 import ShareModal from '../ShareModal/ShareModal'
@@ -29,14 +27,15 @@ export default function PostCard({post, ShowDetails}: {post: postItem , ShowDeta
     : null;
 
   async function likes(id:string) {
-  try {
-    const data = await likePosts(userToken, id)
-     queryClient.invalidateQueries({ queryKey: ["allPosts"] });
+    if (!userToken) return;
+    try {
+      await likePosts(userToken, id);
+      queryClient.invalidateQueries({ queryKey: ["allPosts"] });
       queryClient.invalidateQueries({ queryKey: ["userPosts"] });
-  } catch (error) {
-    
+    } catch {
+      
+    }
   }
-}
 
   return (
  <>

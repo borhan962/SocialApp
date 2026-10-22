@@ -72,7 +72,7 @@ export default function CreateComment({ postId }: { postId: string }) {
     }
 
     try {
-        const res = await createComment(userToken, postId, fd);
+        await createComment(userToken, postId, fd);
 
         reset();
         setImgFile(null);

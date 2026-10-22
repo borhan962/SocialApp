@@ -1,7 +1,7 @@
 "use client";
 
 import {EllipsisVertical, Pencil, TrashBin} from "@gravity-ui/icons";
-import {Button, Dropdown, Header, Label, toast} from "@heroui/react";
+import {Button, Dropdown, Header, Label} from "@heroui/react";
 import { deletePost } from "../../Services/deletePost.servieces";
 import { bookmarkPost } from "../../Services/bookmark.services";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -10,6 +10,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { userDataContext } from "../../context/userDataContext";
 import { Bookmark, Eye } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 
 export function DropDownList({postId, isBookmarked, postUserId, showDetails }: {postId:string, isBookmarked?: boolean, postUserId?: string, showDetails?: boolean }) {
@@ -21,6 +22,7 @@ export function DropDownList({postId, isBookmarked, postUserId, showDetails }: {
   const isOwner = currentUserId && postUserId && currentUserId === postUserId;
 
   async function deletePostFun(){
+   if (!userToken) return;
    const response = await deletePost(userToken , postId);
    return response;
   }
@@ -51,7 +53,7 @@ export function DropDownList({postId, isBookmarked, postUserId, showDetails }: {
       queryClient.invalidateQueries({ queryKey: ["userPosts"] });
       queryClient.invalidateQueries({ queryKey: ["connectionPosts"] });
     },
-    onError: (error: string) => {
+    onError: () => {
       toast.error("Failed to bookmark post");
     }
   });
@@ -76,6 +78,17 @@ export function DropDownList({postId, isBookmarked, postUserId, showDetails }: {
           <Dropdown.Section>
             <Header>Actions</Header>
           
+            {showDetails && (
+              <Dropdown.Item id="show-details" textValue="Show details">
+                <div className="flex h-8 items-center justify-center pt-px">
+                  <Eye className="w-4 h-4 shrink-0 text-muted" />
+                </div>
+                <div className="flex flex-col">
+                  <Label>Show details</Label>
+                </div>
+              </Dropdown.Item>
+            )}
+
             {isOwner && (
             <Dropdown.Item id="edit-file" textValue="Edit file">
               <div className="flex h-8 items-center justify-center pt-px">

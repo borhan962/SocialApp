@@ -7,10 +7,10 @@ type AuthContextType = {
     setToken:React.Dispatch<React.SetStateAction<string | null>>;
 }
 
-export const AuthContext = createContext<AuthContextType | null>(
+export const AuthContext = createContext<AuthContextType>(
     {
-        userToken:"",
-        setToken:()=>undefined
+        userToken: "",
+        setToken: () => undefined
     }
 );
 

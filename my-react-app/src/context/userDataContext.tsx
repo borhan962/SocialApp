@@ -8,7 +8,7 @@ type userTypeContext =  {
     setUserData : React.Dispatch<React.SetStateAction<any>>
 }
 
-export const userDataContext = createContext<userTypeContext | null>({
+export const userDataContext = createContext<userTypeContext>({
     userData : null,
     setUserData: () => undefined
 })

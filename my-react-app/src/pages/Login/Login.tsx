@@ -10,12 +10,12 @@ import { useNavigate } from 'react-router-dom';
 import type { LoginFormInputs } from '../../types/Auth.types';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
-import {Helmet} from "react-helmet";
+
 
 export default function Login() {
 
 
-  const {setToken , userToken} = useContext(AuthContext)
+  const {setToken} = useContext(AuthContext)
 
 
   const navigator = useNavigate();
@@ -50,9 +50,7 @@ export default function Login() {
 
   return (
     <>
-    <Helmet>
-    <title>Login</title>
-    </Helmet>
+  
   
     <section className="order-1 w-full max-w-[430px] lg:order-2">
       <div className="rounded-2xl bg-white p-4 shadow-sm sm:p-6">

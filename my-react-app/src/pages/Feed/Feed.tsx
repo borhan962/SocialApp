@@ -7,7 +7,7 @@ import CreatePost from "../../components/SharedComponent/createPost/CreatePost";
 import SavedPosts from "../../components/SavedPosts/SavedPosts";
 import ConnectionPosts from "../../components/ConnectionPosts/ConnectionPosts";
 import MyPosts from "../../components/MyPosts/MyPosts";
-import {Helmet} from "react-helmet";
+
 
 
 
@@ -16,9 +16,7 @@ export default function Feed() {
 
   return (
     <main>
-      <Helmet>
-        <title>Feed</title>
-      </Helmet>
+
       <div className="container mx-auto md:w-[80%] my-10">
         <div className="grid  gap-x-5 md:grid-cols-12">
            <div className="leftSidebar  col-span-3">

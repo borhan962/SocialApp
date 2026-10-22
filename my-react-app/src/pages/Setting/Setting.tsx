@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { KeyRound, Eye, EyeOff, Loader2 } from "lucide-react";
 import { toast } from "react-toastify";
-import { Helmet } from "react-helmet";
+
 import { AuthContext } from "../../context/AuthContext";
 import { changePassword } from "../../Services/changePassword.services";
 import {
@@ -76,9 +76,7 @@ export default function Setting() {
 
   return (
     <>
-      <Helmet>
-        <title>Settings | Route Posts</title>
-      </Helmet>
+
 
       <div className="max-w-xl w-full mx-auto py-8 px-4">
         {/* Change Password Card */}

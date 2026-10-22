@@ -83,7 +83,7 @@ export default function CreatePost() {
             queryClient.invalidateQueries({ queryKey: ["allPosts"] });
             queryClient.invalidateQueries({ queryKey: ["userPosts"] });
         },
-        onError: (error: any) => {
+        onError: () => {
             toast.error("Can't create your post try later!");
         }
     });

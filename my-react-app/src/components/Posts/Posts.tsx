@@ -1,5 +1,4 @@
-
-import { useContext, useState} from 'react'
+import { useContext } from 'react'
 import PostCard from '../SharedComponent/PostCard/PostCard';
 import { AuthContext } from '../../context/AuthContext';
 import { getAllPosts } from '../../Services/allPosts.services';

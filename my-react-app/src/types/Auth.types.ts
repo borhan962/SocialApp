@@ -1,7 +1,7 @@
 export type RegisterFormInputs = LoginFormInputs & {
   name: string;
   username: string;
-  gender: string;
+  gender: "male" | "female";
   dateOfBirth: string;
   rePassword: string;
 }

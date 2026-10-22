@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import type { postItem } from "../../../types/post.type";
 import { AuthContext } from "../../../context/AuthContext";
 import { userDataContext } from "../../../context/userDataContext";

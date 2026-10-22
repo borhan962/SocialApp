@@ -1,5 +1,4 @@
-
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import type { comment } from '../../../types/comment.type'
 import { AuthContext } from '../../../context/AuthContext'
 import { userDataContext } from '../../../context/userDataContext'

@@ -6,10 +6,8 @@ import { AuthContext } from "../../context/AuthContext"
 import { CustomStyles } from "../../components/loading/loading"
 import PostCard from "../../components/SharedComponent/PostCard/PostCard"
 import type { postItem } from "../../types/post.type"
-import CreatePost from "../../components/SharedComponent/createPost/CreatePost"
 import UploadPhoto from "../../components/SharedComponent/uploadPhoto/UploadPhoto"
-import { getAllPosts } from "../../Services/allPosts.services"
-import {Helmet} from "react-helmet";
+
 import { Mail, Users, FileText, Bookmark, Newspaper } from "lucide-react"
 
 
@@ -25,13 +23,6 @@ export default function Profile() {
       if(userData?.data?.user?._id && userToken){
        const response =  await getUserPosts(userToken , userData?.data?.user?._id)
        return response?.data?.posts
-      }
-    }
-
-    async function fetchAllPosts() {
-      if(userToken) {
-        const response = await getAllPosts(userToken);
-        return response?.data?.posts;
       }
     }
 
@@ -56,9 +47,7 @@ export default function Profile() {
 
   return (
     <> 
-    <Helmet>
-        <title>Profile</title>
-      </Helmet>
+
       <div className="min-h-screen bg-gray-100 dark:bg-[#0b0f19] text-gray-900 dark:text-gray-100 transition-colors duration-200">
         {/* Profile Card */}
         <div className="bg-white dark:bg-gray-800 rounded-b-2xl shadow-sm border-x border-b border-gray-100 dark:border-gray-700/80 max-w-4xl mx-auto transition-colors">

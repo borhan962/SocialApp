@@ -4,7 +4,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { getNotifications, markAllNotificationsAsRead, markNotificationAsRead } from "../../Services/notifications.services";
 import NotificationLoading from "./NotificationLoading";
 import { Bell, Heart, MessageCircle, UserPlus, Share2, Bookmark, AtSign, CheckCheck, Check } from "lucide-react";
-import { Helmet } from "react-helmet";
+
 import { Link } from "react-router-dom";
 
 interface NotificationUser {
@@ -144,9 +144,7 @@ export default function Notifications() {
 
   return (
     <>
-      <Helmet>
-        <title>Notifications</title>
-      </Helmet>
+     
       <div className="container mx-auto md:w-[60%] my-8 px-4">
         {/* Header Card */}
         <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm p-5 mb-5">
