@@ -51,7 +51,7 @@ const Navbar = () => {
       <header className="sticky top-0 z-40 w-full border-b border-slate-200/80 dark:border-slate-800/80 bg-white/85 dark:bg-[#0b0f19]/85 backdrop-blur-md transition-colors duration-200">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-2 py-2 sm:gap-3 sm:px-4">
           <div className="flex items-center gap-3">
-            <img alt="Route Posts" className="h-9 w-9 rounded-xl object-cover" src="/route.png" />
+            <img alt="Route Posts" className="h-9 w-9 rounded-xl object-cover" src="/favicon.png" />
             <p className="hidden text-xl font-extrabold text-slate-900 dark:text-slate-100 sm:block">Route Posts</p>
           </div>
 
